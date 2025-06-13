@@ -1,4 +1,5 @@
 // In auth.js or a new file
+//🔐 Only logged-in users with a valid JWT token can access /profile.
 import authMiddleware from "../middleware/authMiddleware.js";
 
 router.get('/profile', authMiddleware, async (req, res) => {
