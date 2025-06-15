@@ -6,9 +6,17 @@ dotenv.config();  //import dotenv items here
 
 const app = express();
 
+// 1. Body parser middleware (important!)
+app.use(express.json());
+
 app.get('/', async (req, res) => {
-    app.send('Hello World!');
+    app.render('Hello World!');
   });
+
+  // 3. Route middleware
+// app.use('/api/auth', authRoutes); // Your auth routes will be like /api/auth/register or /api/auth/login
+// app.use('/api/products', productRoutes); // Use when you create product routes
+
   
   // Start the server
   const startServer = async () => {
